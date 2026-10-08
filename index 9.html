@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Teerapat Intawong - IT Student Portfolio">
+<title>Teerapat Intawong | IT Portfolio</title>
+<style>
+:root{
+  --bg:#f8fafc;--card:#fff;--text:#172033;--muted:#667085;
+  --line:#e5e7eb;--blue:#4285f4;--green:#34a853;--yellow:#fbbc05;--red:#ea4335;
+  --shadow:0 15px 45px rgba(20,35,60,.08)
+}
+*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+body{font-family:Inter,"Noto Sans Thai","Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{text-decoration:none;color:inherit}.container{width:min(1120px,calc(100% - 36px));margin:auto}
+nav{position:sticky;top:0;z-index:10;background:rgba(248,250,252,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;font-size:1.15rem;letter-spacing:-.04em}.logo span{color:var(--blue)}
+.links{display:flex;gap:25px;color:var(--muted);font-weight:700;font-size:.9rem}.links a:hover{color:var(--blue)}
+.hero{min-height:650px;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;padding:80px 0}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#eef4ff;color:#2459a6;border:1px solid #dbe7ff;border-radius:999px;padding:7px 13px;font-size:.8rem;font-weight:800;margin-bottom:22px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+h1{font-size:clamp(3.1rem,7vw,5.7rem);line-height:.98;letter-spacing:-.07em}
+.blue{color:var(--blue)}.lead{max-width:650px;color:var(--muted);font-size:1.08rem;margin-top:25px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-block;padding:11px 18px;border-radius:12px;border:1px solid var(--line);background:white;font-weight:800;transition:.2s}
+.btn:hover{transform:translateY(-2px)}.primary{background:var(--blue);color:white;border-color:var(--blue)}
+.hero-card{min-height:410px;background:var(--card);border:1px solid var(--line);border-radius:30px;padding:32px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.orb{position:absolute;width:260px;height:260px;border-radius:50%;right:-100px;top:-100px;background:linear-gradient(135deg,var(--blue),#9abcf8)}
+.initial{position:relative;width:110px;height:110px;border-radius:28px;background:white;display:grid;place-items:center;font-size:2.3rem;font-weight:900;color:var(--blue);box-shadow:0 15px 35px rgba(0,0,0,.1);margin-bottom:75px}
+.hero-card h2{font-size:1.7rem}.hero-card p{color:var(--muted)}
+.stats{position:absolute;bottom:30px;left:32px;right:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{padding:12px 7px;background:#f7f9fc;border:1px solid var(--line);border-radius:14px;text-align:center;font-size:.75rem;font-weight:800}
+section{padding:90px 0}.heading{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:32px}
+.heading h2{font-size:clamp(2rem,4vw,3rem);line-height:1;letter-spacing:-.05em}.heading p{max-width:530px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow)}
+.facts{display:grid;gap:15px}.fact{border-bottom:1px solid var(--line);padding-bottom:14px}.fact:last-child{border:0;padding:0}
+.label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:900;color:var(--muted)}.value{font-weight:800;margin-top:2px}
+.profile h3{font-size:1.7rem;margin:7px 0}.profile p{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}.tag{background:#f3f6fa;border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:.82rem;font-weight:800}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.project{min-height:300px;display:flex;flex-direction:column;transition:.2s}.project:hover{transform:translateY(-5px)}
+.num{font-size:.75rem;color:var(--blue);font-weight:900;margin-bottom:55px}.project h3{font-size:1.3rem;margin-bottom:7px}.project p{color:var(--muted);font-size:.9rem}.project .tags{margin-top:auto}
+.timeline{display:grid;gap:15px}.edu{display:grid;grid-template-columns:150px 1fr;gap:25px;padding:23px;background:white;border:1px solid var(--line);border-radius:18px}
+.edu .year{font-weight:900;color:var(--blue)}.edu h3{margin-bottom:3px}.edu p{color:var(--muted)}
+.contact{background:#172033;color:white;border-radius:30px;padding:50px;display:flex;justify-content:space-between;align-items:center;gap:25px}.contact h2{font-size:2.4rem;letter-spacing:-.05em}.contact p{color:#b9c1cf}.contact .btn{border:0}
+footer{padding:35px 0 50px;color:var(--muted);font-size:.83rem;display:flex;justify-content:space-between}
+@media(max-width:850px){.hero,.grid2{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.hero{padding-top:60px}.heading{flex-direction:column;align-items:start}.contact{flex-direction:column;align-items:start}}
+@media(max-width:600px){.container{width:calc(100% - 26px)}.links{display:none}h1{font-size:3.3rem}.hero-card{min-height:360px}.contact{padding:35px}.contact h2{font-size:1.9rem}.edu{grid-template-columns:1fr;gap:5px}footer{flex-direction:column;gap:10px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav">
+    <a class="logo" href="#home">TEERAPAT<span>.</span></a>
+    <div class="links">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+      <a href="#education">Education</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="container hero" id="home">
+  <div>
+    <div class="badge"><span class="dot"></span> IT Student · Open to Opportunities</div>
+    <h1>Build.<br><span class="blue">Learn.</span><br>Create.</h1>
+    <p class="lead">
+      สวัสดีครับ ผม <strong>ธีรภัทร อินทวงศ์</strong> นักศึกษา Information and Communication Technology
+      ผู้สนใจการพัฒนา Web Application, JavaScript, Python และ AI พร้อมเรียนรู้เทคโนโลยีใหม่
+      และนำความรู้ไปสร้างโซลูชันที่ใช้งานได้จริง
+    </p>
+    <div class="buttons">
+      <a class="btn primary" href="#projects">ดูผลงาน</a>
+      <a class="btn" href="mailto:dinoarmx2@gmail.com">ติดต่อผม</a>
+    </div>
+  </div>
+
+  <div class="hero-card">
+    <div class="orb"></div>
+    <div class="initial">TI</div>
+    <h2>Teerapat Intawong</h2>
+    <p>Information & Communication Technology</p>
+    <div class="stats">
+      <div class="stat">WEB<br>DEVELOPMENT</div>
+      <div class="stat">JAVASCRIPT</div>
+      <div class="stat">PYTHON</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+<div class="container">
+  <div class="heading">
+    <h2>About Me</h2>
+    <p>นำเสนอข้อมูลส่วนตัวและพื้นฐานด้าน Technology ในรูปแบบที่เหมาะสำหรับ Portfolio และการสมัครงานสาย IT</p>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <div class="facts">
+        <div class="fact"><div class="label">Full Name</div><div class="value">นาย ธีรภัทร อินทวงศ์</div></div>
+        <div class="fact"><div class="label">Date of Birth</div><div class="value">26 มีนาคม พ.ศ. 2551</div></div>
+        <div class="fact"><div class="label">University</div><div class="value">มหาวิทยาลัยศรีปทุม</div></div>
+        <div class="fact"><div class="label">Faculty</div><div class="value">Information and Communication Technology</div></div>
+        <div class="fact"><div class="label">Email</div><div class="value"><a href="mailto:dinoarmx2@gmail.com">dinoarmx2@gmail.com</a></div></div>
+      </div>
+    </div>
+    <div class="card profile">
+      <div class="label">Career Profile</div>
+      <h3>นักศึกษา IT ที่พร้อมพัฒนาตัวเอง</h3>
+      <p>
+        มีความสนใจด้าน Software Development, Web Application และ AI
+        ให้ความสำคัญกับการเรียนรู้จากการลงมือทำจริง การแก้ปัญหาอย่างเป็นระบบ
+        และการพัฒนาโปรเจกต์ให้มีประโยชน์ต่อผู้ใช้งาน
+      </p>
+      <div class="tags">
+        <span class="tag">Problem Solving</span><span class="tag">Teamwork</span>
+        <span class="tag">Self-Learning</span><span class="tag">Web Development</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="skills">
+<div class="container">
+  <div class="heading">
+    <h2>Technical Skills</h2>
+    <p>ทักษะที่กำลังพัฒนาและสามารถต่อยอดสู่การทำงานด้าน Software / Web Technology</p>
+  </div>
+  <div class="card">
+    <div class="tags">
+      <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span>
+      <span class="tag">Python</span><span class="tag">Web Application</span><span class="tag">AI Basics</span>
+      <span class="tag">Responsive Design</span><span class="tag">Git / GitHub</span>
+      <span class="tag">Problem Solving</span><span class="tag">UI/UX Basics</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="projects">
+<div class="container">
+  <div class="heading">
+    <h2>Projects</h2>
+    <p>พื้นที่สำหรับนำเสนอผลงานจริง โดยควรเพิ่ม GitHub Repository, Live Demo และผลลัพธ์ของแต่ละโปรเจกต์เมื่อพร้อม</p>
+  </div>
+  <div class="projects">
+    <article class="card project">
+      <div class="num">01 / WEB</div>
+      <h3>Personal Portfolio</h3>
+      <p>เว็บไซต์ Portfolio แบบ One-page สำหรับนำเสนอ Profile, Skills, Education และ Projects</p>
+      <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+    </article>
+    <article class="card project">
+      <div class="num">02 / AI</div>
+      <h3>AI Basic Project</h3>
+      <p>โปรเจกต์สำหรับเรียนรู้แนวคิดพื้นฐานของ AI และการนำเทคโนโลยีมาประยุกต์ใช้กับปัญหา</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">AI</span><span class="tag">Data</span></div>
+    </article>
+    <article class="card project">
+      <div class="num">03 / FUTURE</div>
+      <h3>Future Web App</h3>
+      <p>พื้นที่สำหรับโปรเจกต์ถัดไป เช่น Web Application, Automation, AI Application หรือ Open Source</p>
+      <div class="tags"><span class="tag">Build</span><span class="tag">Test</span><span class="tag">Improve</span></div>
+    </article>
+  </div>
+</div>
+</section>
+
+<section id="education">
+<div class="container">
+  <div class="heading">
+    <h2>Education</h2><p>ประวัติการศึกษาและพื้นฐานทางวิชาการ</p>
+  </div>
+  <div class="timeline">
+    <div class="edu"><div class="year">CURRENT</div><div><h3>มหาวิทยาลัยศรีปทุม</h3><p>คณะ Information and Communication Technology — กำลังศึกษาระดับอุดมศึกษา</p></div></div>
+    <div class="edu"><div class="year">HIGH SCHOOL</div><div><h3>โรงเรียนเตรียมอุดมศึกษาพัฒนาการรัชดา</h3><p>สำเร็จการศึกษาระดับมัธยมศึกษาตอนปลาย · เกรดเฉลี่ยตลอดหลักสูตร 3.02</p></div></div>
+  </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+  <div class="contact">
+    <div><h2>Let's build something.</h2><p>พร้อมเรียนรู้ สร้างโปรเจกต์ และเติบโตไปกับทีม Technology</p></div>
+    <a class="btn" href="mailto:dinoarmx2@gmail.com">Email Me ↗</a>
+  </div>
+</div>
+</section>
+</main>
+
+<footer class="container">
+  <div>Teerapat Intawong · IT Portfolio</div>
+  <div>© <span id="year"></span> Built with HTML, CSS & JavaScript</div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+  link.addEventListener("click",e=>{
+    const target=document.querySelector(link.getAttribute("href"));
+    if(target){e.preventDefault();target.scrollIntoView({behavior:"smooth"});}
+  });
+});
+</script>
+</body>
+</html>
